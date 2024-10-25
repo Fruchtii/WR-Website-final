@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beteiligungsfinanzierung</title>
+    <style>
+        /* Original Website Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f7;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        h1, h2, h3 {
+            color: #1d1d1f;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        p, ul, ol {
+            font-size: 17px;
+            color: #1d1d1f;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .button {
+            display: inline-block;
+            background: #0071e3;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 22px;
+            transition: background 0.3s ease;
+            margin: 10px;
+            font-size: 17px;
+            font-weight: 400;
+        }
+        .button:hover {
+            background: #0077ed;
+        }
+        .hidden {
+            display: none;
+        }
+        section {
+            background: #fff;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 18px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 40px;
+            border-radius: 18px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+        }
+        #timeline a, #glossar a {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 16px;
+            background: #e8e8ed;
+            color: #1d1d1f;
+            text-decoration: none;
+            border-radius: 18px;
+            transition: background 0.3s ease;
+        }
+        #timeline a:hover, #glossar a:hover {
+            background: #d2d2d7;
+        }
+    </style>
+</head>
+<body></body>
+    <div class="container">
+        <h1>Beteiligungsfinanzierung</h1>
+        
+        <nav>
+            <a href="#" class="button" onclick="showSection('startseite')">Startseite</a>
+            <a href="#" class="button" onclick="showSection('arten')">Arten</a>
+            <a href="#" class="button" onclick="showSection('vorteile-nachteile')">Vor- und Nachteile</a>
+            <a href="#" class="button" onclick="showSection('prozess')">Prozess</a>
+            <a href="#" class="button" onclick="showSection('fallstudien')">Beispiele</a>
+            <a href="#" class="button" onclick="showSection('glossar')">Glossar</a>
+
+            <a href="#" class="button" onclick="showSection('game')">Magnus Adventure</a>
+        </nav>
+
+        <section id="startseite">
+            <h2>Was ist Beteiligungsfinanzierung?</h2>
+            <p>Möchten Sie mehr erfahren? Klicken Sie sich durch die verschiedenen Bereiche unserer Website und wir führen Sie Schritt für Schritt durch das Thema.</p>
+            <p>Haben Sie sich schon einmal gefragt wie Unternehmen an neues Kapial kommen? Wir wollen Ihnen mit dieser Website eine der Möglichkeiten welche Unternehmen haben näher bringen, die Beteiligungsfinanzierung. Unternehmen erhalten Kapital, indem sie Anteile an Investoren verkaufen, die somit zu Teilhabern werden.</p>
+            
+            <button class="button" onclick="showSection('arten')">Wie funktioniert es?</button>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jFoMX5WB5oY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+
+        <section id="game" class="hidden">
+            <h2>Das Beteiligungsfinanzierungs-Abenteuer mit Magnus</h2>
+            <div class="game-container">
+                <div id="game-scene" class="game-scene">
+       
+                </div>
+                <div id="game-choices" class="game-choices">
+               
+                </div>
+                <div id="game-inventory" class="game-inventory">
+                    Inventar: <span id="inventory-content"></span>
+                </div>
+                <div id="game-status" class="game-status">
+     
+                </div>
+            </div>
+        </section>
+
+        <!-- Original sections continue -->
+        <section id="arten" class="hidden">
+            <h2>Die Hauptformen der Beteiligungsfinanzierung</h2>
+            
+            <p>Die Beteiligungsfinanzierung lässt sich in zwei Hauptformen unterteilen: Eigenkapitalfinanzierung und Mezzanine-Finanzierung. Beide haben unterschiedliche Vor- und Nachteile.</p>
+            
+            <button class="button" onclick="showDetails('eigenkapital')">Eigenkapitalfinanzierung</button>
+            <button class="button" onclick="showDetails('mezzanine')">Mezzanine-Finanzierung</button>
+            
+            <div id="eigenkapital" class="hidden">
+                <h3>Eigenkapitalfinanzierung</h3>
+                <p>Wenn Unternehmen sich über Eigenkapital finanzieren, bekommen die Geldgeber was vom Kuchen ab - quasi einen Teil der Firma in Form von Aktien oder GmbH-Anteilen. Das macht sie zu echten Mitbesitzern: Sie können bei wichtigen Entscheidungen mitreden und kassieren auch einen Teil der Gewinne. Je mehr Anteile sie erhalten, desto mehr Mitspracherecht haben sie und desto größer ist ihr Anteil am Gewinn.</p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JfF8223ww2w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="mezzanine" class="hidden">
+                <h3>Mezzanine-Finanzierung</h3>
+                <p>Mezzanine-Finanzierung ist eine hybride Finanzierungsform, welche zwischen Eigen- und Fremdkapital liegt. Investoren erhalten keine direkten Anteile am Unternehmen, sondern ein sogenanntes nachrangiges Darlehen bzw. stille Beteiligungen. Sie werden im Falle einer Insolvenz erst nach Kunden und anderen Gläubigern bedient, haben aber oft vorteilhafte Bedingungen beim Kauf von Anteilen des Unternehmens (z.B feste Raten oder die möglichkeit das Darlehen in Anteile umzuwandeln)</p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fRDTVE1khRw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="vorteile-nachteile" class="hidden">
+            <h2>Vorteile und Nachteile der Beteiligungsfinanzierung</h2>
+            <h3>Vorteile</h3>
+            <ul>
+                <li><strong>Kein Rückzahlungszwang:</strong> Im Gegensatz zu Krediten müssen die aufgenommenen Mittel nicht zurückgezahlt werden. Investoren beteiligen sich am Unternehmen und tragen das Risiko mit.</li>
+                <li><strong>Mehr Eigenkapital:</strong> Die Erhöhung des Eigenkapitals verbessert die finanzielle Stabilität des Unternehmens und erhöht die Kreditwürdigkeit.</li>
+                <li><strong>Risikoaufteilung:</strong> Das unternehmerische Risiko wird auf mehrere Investoren verteilt, was das Risiko eines Einzelnen minimiert.</li>
+            </ul>
+
+            <h3>Nachteile</h3>
+            <ul>
+                <li><strong>Verlust der Kontrolle:</strong> Mit Investoren, die ein Mitspracherecht haben, verlieren die ursprünglichen Eigentümer teilweise die Kontrolle über das Unternehmen. Investoren haben in den meisten Fällen ein Mitspracherecht und können so Entscheidungen beeinflussen.</li>
+                <li><strong>Gewinnbeteiligung:</strong> Die Investoren erwarten einen Anteil am Gewinn, so bleibt für die anderen Beteiligten weniger übrig oder es kann weniger ins Unternehmen re-investiert werden.</li>
+            </ul>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_3Alx93KjX8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="prozess" class="hidden">
+            <h2>Wie funktioniert der Prozess der Beteiligungsfinanzierung?</h2>
+            <p>Erfahren sie wie die Aufnahme von Beteiligungsfinanzierung abläuft – von der Investorensuche bis zum Abschluss des Beteiligungsvertrags.</p>
+            <div id="timeline">
+                <a href="#" onclick="showProcessDetails('bewertung')">Unternehmensbewertung</a>
+                <a href="#" onclick="showProcessDetails('investorensuche')">Investorensuche und -ansprache</a>
+                <a href="#" onclick="showProcessDetails('verhandlung')">Verhandlung der Konditionen</a>
+                <a href="#" onclick="showProcessDetails('vertrag')">Unterzeichnung des Vertrags</a>
+                <a href="#" onclick="showProcessDetails('monitoring')">Weitere Zusammenarbeit</a>
+            </div>
+            <div id="process-details"></div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gWrNNLWILv8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="fallstudien" class="hidden">
+            <h2>Erfolgsbeispiele: Wie Unternehmen von Beteiligungsfinanzierung profitiert haben</h2>
+            <p>Viele grosse Unternehmen haben in ihrer Gründungszeit von der Beteiligungsfinanzierung Gebrauch gemacht. Hier sind einige Beispiele:</p>
+            <button class="button" onclick="showCaseStudy('google')">Google – Wachstum durch Eigenkapitalfinanzierung</button>
+            <button class="button" onclick="showCaseStudy('spotify')">Spotify – Expansion durch Eigenkapital und Mezzanine-Finanzierung</button>
+            <div id="case-study-details"></div>
+        </section>
+
+        <section id="glossar" class="hidden">
+            <h2>Wichtige Begriffe verstehen</h2>
+            <p>Hier sind die wichtigsten Begriffe der Beteiligungsfinanzierung. Klicken Sie auf einen Begriff, um eine Erklärung zu erhalten:</p>
+            <div id="glossar">
+                <a href="#" onclick="showGlossaryTerm('eigenkapital')">Eigenkapital</a>
+                <a href="#" onclick="showGlossaryTerm('mezzanine-kapital')">Mezzanine-Kapital</a>
+                <a href="#" onclick="showGlossaryTerm('dividende')">Dividende</a>
+                <a href="#" onclick="showGlossaryTerm('unternehmensbewertung')">Unternehmensbewertung</a>
+                <a href="#" onclick="showGlossaryTerm('stille-beteiligung')">Stille Beteiligung</a>
+            </div>
+            <div id="glossary-term-details"></div>
+        </section>
+
+        
+    </div>
+
+    <script>
+        // Original website functions
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => section.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+            if(sectionId === 'game') {
+                startGame();
+            }
+        }
+
+        function showDetails(detailId) {
+            document.querySelectorAll('#arten > div').forEach(div => div.classList.add('hidden'));
+            document.getElementById(detailId).classList.remove('hidden');
+        }
+
+        function showProcessDetails(step) {
+            const details = {
+                'bewertung': 'Der erste Schritt ist eine genaue Bewertung des Unternehmens. Wie viel ist das Unternehmen wert? Wie viel ist der Markt, in dem es operiert wert? usw…. Diese Bewertung bestimmt, wie viele Anteile abgegeben werden und wie viel Kapital das Unternehmen dafür erhält.',
+                'investorensuche': 'Unternehmen müssen geeignete Investoren finden oder von ihnen gefunden werden und diese von einer Beteiligung überzeugen. Hier spielen Geschäftspläne und die Präsentation eine wichtige Rolle.',
+                'verhandlung': 'Sind Investoren gefunden, müssen die genauen Konditionen verhandelt werden. Welche Rechte und Pflichten haben die Investoren? Wie viel Einfluss werden sie nehmen?',
+                'vertrag': 'Nach der Einigung wird der Beteiligungsvertrag unterzeichnet und das Kapital fließt ins Unternehmen.',
+                'monitoring': 'Auch nach Abschluss des Vertrags bleibt die Beziehung zu den Investoren wichtig. Regelmäßige Berichte und Meetings stellen sicher, dass beide Seiten zufrieden sind.'
+            };
+            document.getElementById('process-details').innerHTML = details[step];
+        }
+
+        function showCaseStudy(company) {
+            const studies = {
+                'google': 'Der Technologie-Gigant Google wurde anfangs größtenteils von Beteiligungsfinanzierung finanziert. Nach den Gründern selbst investierten noch vor offizieller Gründung Freunde und Familie rund 1 Million USD. Kurz nach der Gründung kam es zur ersten Investitionsrunde. Zwei Venture-Capital Firmen gaben Google ca. 25 Millionen USD für 20% der jungen Firma.',
+                'spotify': 'Der deutsche Lieferdienst Delivery Hero hat sich über die letzten Jahre schnell entwickelt. Das Unternehmen nutzte neben anderen Finanzierungsmethoden auch die Mezzanine-Finanzierung um seine Expansion in internationale Märkte zu finanzieren.'
+            };
+            document.getElementById('case-study-details').innerHTML = studies[company];
+        }
+
+        function showGlossaryTerm(term) {
+            const terms = {
+                'eigenkapital': 'Kapital, das von den Eigentümern des Unternehmens eingebracht wird oder durch die Ausgabe von Anteilen an neue Investoren generiert wird. Eigenkapitalgeber sind Miteigentümer und haben Anspruch auf Gewinnbeteiligung.',
+                'mezzanine-kapital': 'Eine Mischform zwischen Eigen- und Fremdkapital, das oft in Form von nachrangigen Darlehen oder stillen Beteiligungen bereitgestellt wird. Die Investoren erhalten eine feste Vergütung (in Form von Zinsen), aber oft auch weitere Vereinbarungen. Die Investoren haben meist kein Mitspracherecht (Mezzanine ist italienisch für "Zwischengeschoss")',
+                'dividende': 'Ein Teil des Gewinns, den ein Unternehmen an seine Aktionäre ausschüttet.',
+                'unternehmensbewertung': 'Die Ermittlung des Werts eines Unternehmens, basierend auf verschiedenen Faktoren wie Ertragskraft, Marktposition und zukünftigen Wachstumsaussichten.',
+                'stille-beteiligung': 'Eine Form der Beteiligung, bei der der Investor kein Mitspracherecht erhält, jedoch am Gewinn beteiligt wird.'
+            };
+            document.getElementById('glossary-term-details').innerHTML = terms[term];
+        }
+
+        // Quiz functionality
+        const quizQuestions = [
+            {
+                question: "Was ist ein Vorteil der Eigenkapitalfinanzierung?",
+                answers: [
+                    "Das Unternehmen muss das Kapital nach 5 Jahren zurückzahlen.",
+                    "Das Unternehmen erhält Kapital, ohne Zinsen zu zahlen oder Rückzahlungen leisten zu müssen.",
+                    "Die Investoren haben kein Mitspracherecht."
+                ],
+                correct: 1
+            },
+            {
+                question: "Was bedeutet 'Mezzanine-Finanzierung'?",
+                answers: [
+                    "Eine Finanzierungsform, die ausschließlich aus Eigenkapital besteht.",
+                    "Eine Finanzierungsform, die zwischen Eigen- und Fremdkapital liegt.",
+                    "Eine kurzfristige Kreditform für junge Unternehmen."
+                ],
+                correct: 1
+            },
+            {
+                question: "Was ist ein Nachteil der Beteiligungsfinanzierung?",
+                answers: [
+                    "Das Unternehmen muss höhere Steuern zahlen.",
+                    "Das Unternehmen verliert einen Teil der Kontrolle und muss Gewinne mit den Investoren teilen.",
+                    "Das Unternehmen muss einen Kredit aufnehmen."
+                ],
+                correct: 1
+            },
+            {
+                question: "Bei welchem Finanzierungsmodell werden Investoren direkt Miteigentümer des Unternehmens?",
+                answers: [
+                    "Fremdkapitalfinanzierung",
+                    "Mezzanine-Finanzierung",
+                    "Eigenkapitalfinanzierung"
+                ],
+                correct: 2
+            },
+            {
+                question: "Was ist der erste Schritt im Prozess der Beteiligungsfinanzierung?",
+                answers: [
+                    "Investorensuche",
+                    "Verhandlung der Konditionen",
+                    "Unternehmensbewertung"
+                ],
+                correct: 2
+            }
+        ];
+
+        function loadQuiz() {
+            let quizHTML = '';
+            quizQuestions.forEach((q, index) => {
+                quizHTML += `<h3>Frage ${index + 1}: ${q.question}</h3>`;
+                q.answers.forEach((answer, ansIndex) => {
+                    quizHTML += `<input type="radio" name="q${index}" value="${ansIndex}"> ${answer}<br>`;
+                });
+            });
+            document.getElementById('quiz-container').innerHTML = quizHTML;
+        }
+
+        function checkAnswers() {
+            let score = 0;
+            quizQuestions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selected && parseInt(selected.value) === q.correct) {
+                    score++;
+                }
+            });
+            document.getElementById('quiz-results').innerHTML = `Sie haben ${score} von ${quizQuestions.length} Fragen richtig beantwortet.`;
+        }
+
+        loadQuiz();
+
+// Game-specific code
+const gameState = {
+            currentScene: 'prolog',
+            inventory: [],
+            choices: [],
+            endings: {
+                selfDetermined: false,
+                siliconValley: false,
+                frankenstein: false,
+                corporate: false,
+                revolution: false,
+                smallBusiness: false
+            }
+        };
+
+        const gameScenes = {
+    prolog: {
+        title: "Die zweifelhafte Innovation",
+        text: "Magnus, ehemaliger Schachweltmeister und grand-master mit über 3000 Elo und einer gescheiterten Karriere als Food-Influencer, hatte DIE Geschäftsidee des Jahrhunderts: 'MeatMaker', ein revolutionärer Weg, Fleisch im Labor herzustellen. Die Idee kam ihm, nachdem er ausversehen eine Flasche milch für 36 Monate in seinem Handschuhfach vergessen hatte.",
+        choices: [
+            {
+                text: "Weiter zum Startup-Café",
+                nextScene: 'startupCafe'
+            }
+        ]
+    },
+    startupCafe: {
+        title: "Akt 1: Das Startup-Café",
+        text: "Magnus sitzt an einem recycelten Tisch aus Pappe und starrt frustriert auf seinen 28€ Chai Latte mit Sojamilch. Vor ihm liegt sein Business-Plan. Am Nebentisch sitzt Victor Venture, der 'T-Rex der Startup-Szene'.",
+        choices: [
+            {
+                text: "Victor ansprechen",
+                nextScene: 'meetVictor',
+                effect: 'addCourage'
+            },
+            {
+                text: "Weiter am Business-Plan arbeiten",
+                nextScene: 'workOnPlan',
+                effect: 'addPlan'
+            }
+        ]
+    },
+    workOnPlan: {
+        title: "Der verbesserte Business-Plan",
+        text: "Magnus feilt weiter an seinem Business-Plan. Die Zahlen werden überzeugender, auch wenn die Realität möglicherweise anders aussieht.",
+        choices: [
+            {
+                text: "Jetzt Victor ansprechen",
+                nextScene: 'meetVictor',
+                effect: 'addImprovedPlan'
+            }
+        ]
+    },
+    meetVictor: {
+        title: "Szene 2: Venture Victor",
+        text: "Victor ist berüchtigt dafür, kontroverse Startups zu finanzieren - seine letzte Investition war ein KI-System, das männliche Küken exekutierte. Er schaut verträumt vor sich hin, als plötzlich Viktor Venture vor ihm steht.",
+        choices: [
+            {
+                text: "Pitch präsentieren",
+                nextScene: 'pitchScene'
+            }
+        ]
+    },
+    pitchScene: {
+        title: "Akt 2: Der Pitch",
+        text: "In Victors Büro: ein enger, modern eingerichteter Raum mit Plakaten von Patrick Bateman und dem 'Wolf of Wall Street' an der Wand. Auf seinem Tisch steht ein Schachbrett.\n\nMeat Makers Finanz Projektionen:\nLaborkosten: 400.000€ ('ohne weitere Explosionen')\nMarketing: 100.000€ ('Hauptsächlich für gute Anwälte')\nErste Kundenprognose: 50.000 mutige Erstkäufer\nPreis pro Kilo: 29,99€",
+        choices: [
+            {
+                text: "Eigenkapitalfinanzierung wählen (500.000€ für 30%)",
+                nextScene: 'eigenkapitalPath',
+                effect: 'addEigenkapital'
+            },
+            {
+                text: "Mezzanine-Finanzierung wählen (300.000€ als Darlehen)",
+                nextScene: 'mezzaninePath',
+                effect: 'addMezzanine'
+            }
+        ]
+    },
+    eigenkapitalPath: {
+        title: "Der Eigenkapitalweg",
+        text: "Victor wird 'stiller' Gesellschafter (sehr still). Die Professionalisierung des Unternehmens beginnt. Eine neue Marketingkampagne wird gestartet: 'MeatMaker - Wo Wissenschaft auf Geschmack trifft' (Der ursprüngliche Slogan 'Frankenfleisch - Es lebt!' wurde zum Bedauern Magnus abgelehnt).",
+        choices: [
+            {
+                text: "Expansion vorantreiben",
+                nextScene: 'expansion',
+                effect: 'addGrowth'
+            },
+            {
+                text: "Vorsichtig agieren",
+                nextScene: 'careful',
+                effect: 'addStability'
+            }
+        ]
+    },
+    mezzaninePath: {
+        title: "Der Mezzanine-Weg",
+        text: "Magnus behält die volle Kontrolle über seine 'Vision'. Allerdings steigt der Druck durch die Rückzahlungsverpflichtungen. Dafür gibt es keine Einmischung bei fragwürdigen Laborexperimenten. Neuer Slogan: 'MeatMaker - Nicht ganz Bio, aber es sterben keine (klassischen) Tiere'",
+        choices: [
+            {
+                text: "Experimente intensivieren",
+                nextScene: 'experiments',
+                effect: 'addRisk'
+            },
+            {
+                text: "Fokus auf Rückzahlung",
+                nextScene: 'repayment',
+                effect: 'addSafety'
+            }
+        ]
+    },
+    expansion: {
+        title: "Aggressive Expansion",
+        text: "Magnus beschließt, alles auf Wachstum zu setzen. Neue Labore werden eröffnet, das Marketing-Budget wird verdreifacht, und die ersten internationalen Märkte werden ins Auge gefasst.",
+        choices: [
+            {
+                text: "Weitere Investoren suchen",
+                nextScene: 'plotTwist',
+                effect: 'addInvestors'
+            },
+            {
+                text: "Börsengang vorbereiten",
+                nextScene: 'plotTwist',
+                effect: 'addIPO'
+            }
+        ]
+    },
+    careful: {
+        title: "Vorsichtiger Ansatz",
+        text: "Magnus entscheidet sich für einen kontrollierten Aufbau. Die Produktqualität steht im Vordergrund, und jeder Schritt wird sorgfältig geplant.",
+        choices: [
+            {
+                text: "Fokus auf Forschung & Entwicklung",
+                nextScene: 'plotTwist',
+                effect: 'addResearch'
+            },
+            {
+                text: "Regionale Expansion",
+                nextScene: 'plotTwist',
+                effect: 'addRegional'
+            }
+        ]
+    },
+    experiments: {
+        title: "Intensive Experimente",
+        text: "Magnus gibt seiner wissenschaftlichen Neugier nach. Die Experimente werden gewagter, die Ergebnisse... interessanter. Ein Steak versucht auszubrechen.",
+        choices: [
+            {
+                text: "Geheimprojekt starten",
+                nextScene: 'plotTwist',
+                effect: 'addSecret'
+            },
+            {
+                text: "Experimente eindämmen",
+                nextScene: 'plotTwist',
+                effect: 'addControl'
+            }
+        ]
+    },
+    repayment: {
+        title: "Fokus auf Rückzahlung",
+        text: "Magnus konzentriert sich auf die Rückzahlung des Mezzanine-Darlehens. Die Produktion wird optimiert, Marketing minimiert, jeder Euro zweimal umgedreht.",
+        choices: [
+            {
+                text: "Kostenoptimierung",
+                nextScene: 'plotTwist',
+                effect: 'addEfficiency'
+            },
+            {
+                text: "Neue Märkte erschließen",
+                nextScene: 'plotTwist',
+                effect: 'addMarkets'
+            }
+        ]
+    },
+    plotTwist: {
+        title: "Unerwartete Wendungen",
+        text: "Drei Ereignisse erschüttern die Fleischbranche:\n1. Ein großer Fast-Food-Konzern kündigt 'McSLOP' an\n2. Ein Video von Magnus' misslungenem Laborversuch ('Das Steak, das mich biss') geht viral\n3. Ein einflussreicher Food-Kritiker testet MeatMaker als Mutprobe: 'ziemlich gut... warum pulsiert es?'",
+        choices: [
+            {
+                text: "Zweite Finanzierungsrunde starten",
+                nextScene: 'secondRound'
+            }
+        ]
+    },
+    secondRound: {
+        title: "Die zweite Finanzierungsrunde",
+        text: "Das virale Video 'Das Steak, das mich biss' hat für unerwartete Aufmerksamkeit gesorgt. McSLOP macht Druck. Mehr Kapital wird benötigt.",
+        choices: [
+            {
+                text: "Silicon Capital (2 Millionen für 40%)",
+                nextScene: 'labAccident',
+                effect: 'addVC'
+            },
+            {
+                text: "Strategischer Investor (1,5 Millionen für 25%)",
+                nextScene: 'labAccident',
+                effect: 'addStrategic'
+            },
+            {
+                text: "Crowdfunding & Mezzanine",
+                nextScene: 'labAccident',
+                effect: 'addCrowd'
+            }
+        ]
+    },
+    labAccident: {
+        title: "Der kritische Moment",
+        text: "Ein Laborunfall führt zu einer 'minimen' Mutation der Produktionsstämme. Die Steaks entwickeln eine leichte Tendenz zur Flucht.",
+        choices: [
+            {
+                text: "Notverkauf an Pharmakonzern",
+                nextScene: 'corporateEnding'
+            },
+            {
+                text: "Russischen Investor akzeptieren",
+                nextScene: 'frankensteinEnding'
+            },
+            {
+                text: "Verzweifelte Mezzanine-Finanzierung",
+                nextScene: 'selfDeterminedEnding'
+            },
+            {
+                text: "Meatopia gründen",
+                nextScene: 'meatopiaEnding'
+            }
+        ]
+    },
+    selfDeterminedEnding: {
+        title: "Das 'Selbstbestimmte' Ende",
+        text: "Magnus behält die Kontrolle, aber die Schulden erdrücken ihn. Die mutierten Steaks organisieren sich gewerkschaftlich. Schließlich erfolgt der Verkauf an eine Tierschutzorganisation. Aus MeatMaker wird MeatSaver.",
+        choices: [
+            {
+                text: "Neues Spiel starten",
+                nextScene: 'prolog'
+            }
+        ]
+    },
+    siliconValleyEnding: {
+        title: "Das 'Silicon Valley' Ende",
+        text: "Rasantes Wachstum führt zu einer massiven Expansion. Magnus wird auf 10% verwässert, verkauft aber seine Anteile für 100 Millionen und kehrt zum Schachspielen zurück. Das Produkt wird zu 'iPork' umbenannt.",
+        choices: [
+            {
+                text: "Neues Spiel starten",
+                nextScene: 'prolog'
+            }
+        ]
+    },
+    frankensteinEnding: {
+        title: "Das 'Frankenstein' Ende",
+        text: "Die militärische 'Optimierung' der Produkte führt zu unerwarteten Entwicklungen. Magnus wird zum Mad Scientist. Ein geheimes Labor auf einer Weltraumstation wird eingerichtet. Die UN ist sehr besorgt.",
+        choices: [
+            {
+                text: "Neues Spiel starten",
+                nextScene: 'prolog'
+            }
+        ]
+    },
+    corporateEnding: {
+        title: "Das 'Corporate' Ende",
+        text: "Solides Wachstum, aber Magnus wird schrittweise verdrängt. Das Kunstfleisch wird aus Kostengründen mit echtem Fleisch gestreckt. Dafür gibt es internationales Wachstum und Marktdurchdringung.",
+        choices: [
+            {
+                text: "Neues Spiel starten",
+                nextScene: 'prolog'
+            }
+        ]
+    },
+    revolutionEnding: {
+        title: "Das 'Revolution' Ende",
+        text: "Die Produkte entwickeln Bewusstsein und übernehmen die Firma. Magnus wird 'freundlich gebeten' zu gehen. Steaks sitzen im Vorstand. Neue Marketingkampagne: 'Von Fleisch, für Fleisch'",
+        choices: [
+            {
+                text: "Neues Spiel starten",
+                nextScene: 'prolog'
+            }
+        ]
+    },
+    meatopiaEnding: {
+        title: "Das 'Meatopia' Ende",
+        text: "Magnus gründet einen eigenen Staat auf einer künstlichen, biologischen Insel. Die Laborratten bekommen Diplomatenstatus. Die UN-Sicherheitsbeauftragten sind sehr besorgt. Aus der Fleischproduktion wird Bürgerproduktion.",
+        choices: [
+            {
+                text: "Neues Spiel starten",
+                nextScene: 'prolog'
+            }
+        ]
+    }
+};
+
+        function startGame() {
+            gameState.currentScene = 'prolog';
+            gameState.inventory = [];
+            gameState.choices = [];
+            Object.keys(gameState.endings).forEach(key => gameState.endings[key] = false);
+            updateGameScene();
+        }
+
+        function updateGameScene() {
+            const scene = gameScenes[gameState.currentScene];
+            const sceneElement = document.getElementById('game-scene');
+            const choicesElement = document.getElementById('game-choices');
+
+            sceneElement.innerHTML = `
+                <h3>${scene.title}</h3>
+                <p>${scene.text}</p>
+            `;
+
+            choicesElement.innerHTML = '';
+            scene.choices.forEach(choice => {
+                const button = document.createElement('button');
+                button.className = 'choice-button';
+                button.textContent = choice.text;
+                button.onclick = () => makeChoice(choice);
+                choicesElement.appendChild(button);
+            });
+
+            updateInventory();
+        }
+
+        function makeChoice(choice) {
+            if (choice.effect) {
+                handleChoiceEffect(choice.effect);
+            }
+            gameState.currentScene = choice.nextScene;
+            updateGameScene();
+        }
+
+        function handleChoiceEffect(effect) {
+            switch(effect) {
+                case 'addEigenkapital':
+                    gameState.inventory.push('500.000€ Eigenkapital');
+                    break;
+                case 'addMezzanine':
+                    gameState.inventory.push('300.000€ Mezzanine-Darlehen');
+                    break;
+                case 'addCourage':
+                    gameState.inventory.push('Mut +1');
+                    break;
+                case 'addPlan':
+                    gameState.inventory.push('Verbesserter Business-Plan');
+                    break;
+                // Add more effects as needed
+            }
+        }
+
+        function updateInventory() {
+            const inventoryElement = document.getElementById('inventory-content');
+            inventoryElement.textContent = gameState.inventory.join(', ') || 'Leer';
+        }
+
+    </script>
+</body>
+</html>
